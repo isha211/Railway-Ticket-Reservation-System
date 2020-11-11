@@ -1,0 +1,59 @@
+<h1>All trains</h1>
+<a href="/train/new">Add new train</a>
+<table>
+    <tr>
+        <td>Train Name</td>
+        <td>From</td>
+        <td>To</td>
+        <td>M</td>
+        <td>T</td>
+        <td>W</td>
+        <td>Th</td>
+        <td>F</td>
+        <td>S</td>
+        <td>Su</td>
+    </tr>
+    <%trains.forEach(function(train){%>
+        <tr>
+            <td><%=train.name%></td>
+            <td><%=train.from.name%></td>
+            <td><%=train.to.name%></td>
+            <%if(train.week.includes("mon")){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            <%if(train.week.includes('tue')){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            <%if(train.week.includes('wed')){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            <%if(train.week.includes('thu')){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            <%if(train.week.includes('fri')){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            <%if(train.week.includes('sat')){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            <%if(train.week.includes('sun')){%>
+                <td>Y</td>
+            <%}else{%>
+                <td>N</td>
+            <%}%>
+            
+        </tr>
+    <%})%>
+</table>

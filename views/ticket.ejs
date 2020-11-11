@@ -1,0 +1,51 @@
+<h1>Your tickets</h1>
+
+<table>
+    <thead>
+            <td>Train name</td>
+            <td>Date</td>
+            <td>From</td>
+            <td>To</td>
+            <td>Passenger name</td>
+            <td>Seat no</td>
+            <td>Status</td>
+    </thead>
+    <tbody>
+        <% tickets.forEach(function(ticket){ %>
+            <tr>
+                <td><%= ticket.train.name %></td>
+                <td><%= ticket.date.toLocaleDateString(); %></td>
+                <td><%= ticket.train.from.name %></td>
+                <td><%= ticket.train.to.name %></td>
+                <td>
+                    <table>
+                            <%ticket.passenger.forEach(function(pass){%>
+                                <tr>
+                                    <%= pass.name %>
+                                </tr>
+                            <%})%>
+                    </table>
+                    
+                </td>
+                <td>
+                    <table>
+                            <%ticket.seat.forEach(function(s){%>
+                                <tr>
+                                    <%= s %>
+                                </tr>
+                            <%})%>
+                    </table>
+                    
+                </td>
+                <td>
+                    <% if(ticket.status==true){ %>
+                        Confirmed
+                    <% }else{ %>
+                        Cancelled
+                    <% } %>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+
+</table>

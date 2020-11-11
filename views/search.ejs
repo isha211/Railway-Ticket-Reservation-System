@@ -1,0 +1,15 @@
+<h1>Search for train</h1>
+<form method="POST" action="/search">
+    <select  id="from" name="from">
+        <% for(var i=0; i < stations.length; i++) { %>
+           <option ><%= stations[i].name %></option>
+        <% } %>
+    </select>
+    <select  id="to" name="to" >
+        <% for(var i=0; i < stations.length; i++) { %>
+           <option ><%= stations[i].name %></option>
+        <% } %>
+    </select>
+    <input type="date" name="dat">
+    <input type="submit">
+</form>

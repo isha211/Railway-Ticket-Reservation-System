@@ -1,0 +1,18 @@
+<h1>booking page</h1>
+<form method="POST" action="/ticket/<%= id %>/<%= num %>/<%= date %>">
+    <div>
+        <input type="radio" name="category" value="a" id="a">
+        <label for="a">A(available <%= avail.a %>  )</label>
+        <input type="radio" name="category" value="b" id="b">
+        <label for="b">B(available <%= avail.b %>)</label>
+        <input type="radio" name="category" value="c" id="c">
+        <label for="c">C(available <%= avail.c %> )</label>
+    </div>
+    <% for(var i=0;i<num;i++){ %>
+        <label for="p<%= i+1 %>"><%= i+1 %>) Passenger name</label>
+        <input type="text" id="p<%= i+1 %>" name="p<%= i+1 %>">
+        <br>
+    <% } %> 
+    
+    <button>Book!</button>
+</form>

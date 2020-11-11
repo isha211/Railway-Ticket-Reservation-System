@@ -1,0 +1,30 @@
+<form action="/train" method="POST">
+    <input type="text" name="name" placeholder="Name of the train">
+    <select  id="from" name="from">
+        <% for(var i=0; i < stations.length; i++) { %>
+           <option><%= stations[i].name %></option>
+        <% } %>
+    </select>
+    <select  id="to" name="to" >
+        <% for(var i=0; i < stations.length; i++) { %>
+           <option><%= stations[i].name %></option>
+        <% } %>
+    </select>
+
+    <label for="mon">Monday</label>
+    <input type="checkbox" name="mon" id="mon" >
+    <label for="tue">Tuesday</label>
+    <input type="checkbox" name="tue" id="tue">
+    <label for="wed">Wednesday</label>
+    <input type="checkbox" name="wed" id="wed">
+    <label for="thur">Thursday</label>
+    <input type="checkbox" name="thur" id="thur">
+    <label for="fri">Friday</label>
+    <input type="checkbox" name="fri" id="fri">
+    <label for="sat">Saturday</label>
+    <input type="checkbox" name="sat" id="sat">
+    <label for="sun">Sunday</label>
+    <input type="checkbox" name="sun" id="sun">
+
+    <input type="submit">
+</form>
